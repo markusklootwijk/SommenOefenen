@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Breuken oefenen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="css\mijncss.css"/>
+    <script type="text/javascript" src="javascript\oefensommenscript.js"></script>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="index.html">Welkom</a></li>
+        <li><a href="tafelsoefenen.html">Tafels oefenen</a></li>
+        <li><a href="breukenoefenen.html">Breuken oefenen</a></li>
+        <li><a href="plussommenoefenen.html">Plus sommen oefenen</a></li>
+        <li><a href="releases.html">Releases</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+    <h1>Breuken oefenen
+        <a href="alletafelstonen.html" target="_blank"><img class="helpimage" src="afbeeldingen\help.png" alt="Toon alle tafels" title="Toon alle tafels"></a>
+    </h1>
+    <div id="tafelinstellen_div">
+        <h3>Vul de waarde in die je wilt oefenen: </h3> 
+        <input type="radio" name="radiotafel" id="tafel0-5" value="0-5" checked="checked"> 0 t/m 5<br>
+        <input type="radio" name="radiotafel" id ="tafel5-10"value="5-10"> 5 t/m 10<br>
+        <input type="radio" name="radiotafel" id="tafel0-10" value="0-10"> 0 t/m 10<br>
+        <input type="radio" name="radiotafel" id="tafelanders" value="anders"> 
+        <input type="number" id="oefenwaardetekst" ondragenter="sommenklaarzetten()"  placeholder="vul hier de tafel in" >
+        <input type="button" id="oefenwaardebutton" onclick="sommenklaarzetten()" value="oefenen" > 
+    </div>
+    <br/>
+<div id="som_div"> 
+    <h3 id="som"></h3>
+    <input type="number" id="antwoordtekst" ondragenter="controleerantwoord()" placeholder="vul hier het antwoord in" >
+    <input type="button" id="antwoordbutton" onclick="controleerantwoord()" value="Controleer" > 
+    <img src="afbeeldingen\help.png" id="helpantwoordimage" alt="help antwoord" onclick="toonantwoord()" >
+</div>
+    <br/>
+<div id="score_div"> 
+    <h3 id="score">Score</h3>
+    <p> Totaal: <strong id="scoretotaal"></strong><br/>
+        Goed: <strong id="scoregoed"></strong><br/>
+        Fout: <strong id="scorefout"></strong></p>
+</div>
+<br/>
+<div id="gemaaktesommen_div">
+    <h3>Gemaakte sommen: </h3>
+</div>
+
+    <script>
+    
+    init(type.breuken);
+
+    document.getElementById('oefenwaardetekst').addEventListener('keypress', function (event) {
+        if (event.keyCode == 13) {
+            document.getElementById('oefenwaardebutton').click();
+        }
+    });
+
+    document.getElementById('antwoordtekst').addEventListener('keypress', function(event) {
+        if (event.keyCode == 13) {
+            document.getElementById('antwoordbutton').click();
+        }
+    });
+    </script>    
+</body>
+</html>

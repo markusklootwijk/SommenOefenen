@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Help! Toon tafels</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link type="text/css" rel="stylesheet" href="css\mijncss.css"/>
+</head>
+<body>
+<div id="sommen_div">
+    <h3>De tafel van: <strong id="tafel"></strong></h3>
+    <p>Kies hieronder de tafel: </p>
+
+<div class="tab">
+  <button id="1tab" class="tablinks" onclick="openTafel(event, '1')">1</button>
+  <button id="2tab" class="tablinks" onclick="openTafel(event, '2')">2</button>
+  <button id="3tab" class="tablinks" onclick="openTafel(event, '3')">3</button>
+  <button id="4tab" class="tablinks" onclick="openTafel(event, '4')">4</button>
+  <button id="5tab" class="tablinks" onclick="openTafel(event, '5')">5</button>
+  <button id="6tab" class="tablinks" onclick="openTafel(event, '6')">6</button>
+  <button id="7tab" class="tablinks" onclick="openTafel(event, '7')">7</button>
+  <button id="8tab" class="tablinks" onclick="openTafel(event, '8')">8</button>
+  <button id="9tab" class="tablinks" onclick="openTafel(event, '9')">9</button>
+  <button id="10tab" class="tablinks" onclick="openTafel(event, '10')">10</button>
+  <button id="11tab" class="tablinks" onclick="openTafel(event, '11')">11</button>
+  <button id="12tab" class="tablinks" onclick="openTafel(event, '12')">12</button>
+</div>
+
+<div id="1" class="tabcontent"></div>
+<div id="2" class="tabcontent"></div>
+<div id="3" class="tabcontent"></div>
+<div id="4" class="tabcontent"></div>
+<div id="5" class="tabcontent"></div>
+<div id="6" class="tabcontent"></div>
+<div id="7" class="tabcontent"></div>
+<div id="8" class="tabcontent"></div>
+<div id="9" class="tabcontent"></div>
+<div id="10" class="tabcontent"></div>
+<div id="11" class="tabcontent"></div>
+<div id="12" class="tabcontent"></div>
+
+</div>
+
+<div id="tafelmatrix">
+    <h1>Tafel matrix</h1>
+    <table>
+        <tr><th>X</th><th>0</th><th>1</th><th>2</th><th>3</th></tr>
+    </table>
+
+</div>
+
+    <script>
+        ToonTafel(1);
+        ToonTafel(2);
+        ToonTafel(3);
+        ToonTafel(4);
+        ToonTafel(5);
+        ToonTafel(6);
+        ToonTafel(7);
+        ToonTafel(8);
+        ToonTafel(9);
+        ToonTafel(10);
+        ToonTafel(11);
+        ToonTafel(12);
+
+        document.getElementById("1tab").click();
+
+        function ToonTafel(waarde)
+        {
+            var tafels = "";
+           
+            for(var i=0; i<11; i++)
+            {
+            var antwoord = i * waarde;            
+            tafels += i + " x " + waarde + " = " + antwoord + "<br/>";
+            }
+
+            var newItem = document.createElement("p");
+            newItem.innerHTML = tafels;
+            document.getElementById(waarde).appendChild(newItem);
+        }
+
+        function openTafel(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }  
+    </script>    
+</body>
+</html>
