@@ -93,6 +93,8 @@ function somzetten() {
     else if (typesom == type.plus) {
         somzettenplus();
     }
+    else if (typesom == type.min) {
+        somzettenplus();
 }
 
 function tafelsklaarzetten() {
