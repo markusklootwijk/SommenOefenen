@@ -95,9 +95,12 @@ function somzetten() {
     }
     else if (typesom == type.min) {
         somzettenplus();
+    }
 }
 
 function tafelsklaarzetten() {
+    console.log("tafelsklaarzetten");
+
     if (document.getElementById('tafel0-5').checked) {
         radiotafelselectie = document.getElementById('tafel0-5').value;
     }
@@ -217,5 +220,5 @@ function gemaaktesommenbijwerken(goedantwoord) {
 }  
 
 function toonantwoord() {
-    alert("Het antwoord is: " + antwoord)
+    alert("Het antwoord is: " + antwoord);
 }
